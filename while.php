@@ -58,7 +58,7 @@
         }
         th { 
             background: #2d2d2d; 
-            color: #ff5555; /* สีแดงหม่นเพิ่มความดุดัน */
+            color: #ff5555; /* สีแดงหม่นดุดัน */
         }
         tr:nth-child(even) { background: #222; } /* สลับแถวสีมืด */
         tr:hover td { background: #2a2a2a; color: #fff; } /* ไฮไลท์เมื่อชี้ */
@@ -68,7 +68,7 @@
 
 <div class="box">
     <h1>งานที่2 อภิชาติ ชินรัตน์ BIT.2/4 เลขที่ 44</h1>
-    <a href="while.php">ไปหน้าที่2</a><br><br>
+    <a href="index.php">ไปหน้าที่1</a><br><br>
 
     <form action="" method="get">
         <label>กรอกแม่สูตรคูณ :</label>
@@ -78,17 +78,25 @@
 
     <?php
     if(isset($_GET["num"])){
-        $num = (int)$_GET["num"];
+
+        $num = (int)$_GET["num"]; 
 
         echo "<h2>แม่สูตรคูณแม่ $num</h2>";
-        echo "<table>";
-        echo "<tr><th>สูตร</th><th>ผลลัพธ์</th></tr>";
 
-        for($i = 1; $i <= 12; $i++){
+        echo "<table>";
+        echo "<tr>";
+        echo "<th>สูตร</th>";
+        echo "<th>ผลลัพธ์</th>";
+        echo "</tr>";
+
+        $i = 1;
+        while($i <= 12){
             echo "<tr>";
             echo "<td>$num × $i</td>";
             echo "<td>" . ($num * $i) . "</td>";
             echo "</tr>";
+
+            $i++;
         }
 
         echo "</table>";
